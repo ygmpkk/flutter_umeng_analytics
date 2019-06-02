@@ -5,7 +5,7 @@
 @implementation FlutterUmengAnalyticsPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
   FlutterMethodChannel* channel =
-      [FlutterMethodChannel methodChannelWithName:@"flutter_umeng_analytics"
+      [FlutterMethodChannel methodChannelWithName:@"umeng_analytics_flutter"
                                   binaryMessenger:[registrar messenger]];
   FlutterUmengAnalyticsPlugin* instance = [[FlutterUmengAnalyticsPlugin alloc] init];
   [registrar addMethodCallDelegate:instance channel:channel];
