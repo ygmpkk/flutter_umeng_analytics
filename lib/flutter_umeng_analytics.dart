@@ -15,11 +15,14 @@ class UMengAnalytics {
   /// [logEnable] 设置组件化的Log开关，参数默认为false，如需查看LOG设置为true
   static Future<bool> init(String key,
       {int mode = 0,
+      String channel = "",
       bool reportCrash = true,
       bool encrypt = false,
       double interval = 30000,
       bool logEnable = false}) {
     Map<String, dynamic> args = {"key": key};
+
+    args["channel"] = channel;
 
     if (mode != null) {
       args["mode"] = mode;

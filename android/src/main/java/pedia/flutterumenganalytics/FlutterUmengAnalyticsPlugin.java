@@ -56,7 +56,7 @@ public class FlutterUmengAnalyticsPlugin implements MethodCallHandler {
          * 参数4：设备类型，UMConfigure.DEVICE_TYPE_PHONE为手机、UMConfigure.DEVICE_TYPE_BOX为盒子，默认为手机
          * 参数5：Push推送业务的secret
          */
-        UMConfigure.init(activity, (String) call.argument("key"), "Umeng", UMConfigure.DEVICE_TYPE_PHONE, null);
+        UMConfigure.init(activity, (String) call.argument("key"), call.argument("channel"), UMConfigure.DEVICE_TYPE_PHONE, null);
         // 设置日志加密 参数：boolean 默认为false（不加密）
         UMConfigure.setEncryptEnabled((Boolean) call.argument("encrypt"));
 
