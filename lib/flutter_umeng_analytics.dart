@@ -22,7 +22,7 @@ class UMengAnalytics {
       bool logEnable = false}) {
     Map<String, dynamic> args = {"key": key};
 
-    args["channel"] = channel;
+    args["channel"] = channel ?? '';
 
     if (mode != null) {
       args["mode"] = mode;
@@ -52,7 +52,7 @@ class UMengAnalytics {
   /// 关闭页面时结束统计
   /// [name]
   static Future<Null> endPageView(String name) async {
-    _channel.invokeMethod("endPageView", {"id": name});
+    _channel.invokeMethod("endPageView", {"name": name});
   }
 
   /// 登陆统计
@@ -66,6 +66,6 @@ class UMengAnalytics {
   /// [eventId]  当前统计的事件ID
   /// [label] 事件的标签属性
   static Future<Null> eventCounts(String eventId, {String label}) async {
-    _channel.invokeMethod("eventCounts", {"label": label});
+    _channel.invokeMethod("eventCounts", {"eventId": eventId, "label": label});
   }
 }

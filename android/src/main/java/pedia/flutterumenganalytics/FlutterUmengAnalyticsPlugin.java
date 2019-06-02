@@ -95,7 +95,7 @@ public class FlutterUmengAnalyticsPlugin implements MethodCallHandler {
 
     // 关闭页面时结束统计
     public void endPageView(MethodCall call, Result result) {
-        MobclickAgent.onPageEnd((String) call.argument("id"));
+        MobclickAgent.onPageEnd((String) call.argument("name"));
         MobclickAgent.onPause(activity);
         result.success(null);
     }
